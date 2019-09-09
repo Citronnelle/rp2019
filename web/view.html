@@ -6,9 +6,9 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script>
 		var urlStr = window.location.href;
-		urlStr = urlStr.split("?")[1];	// Will not get the first parameter without the split.
+		var queryStr = urlStr.split("?")[1];	// Will not get the first parameter without the split.
 
-		var searchParams = new URLSearchParams(urlStr);
+		var searchParams = new URLSearchParams(queryStr);
 
 		var prodFileName = searchParams.get("file");
 		var prodName = searchParams.get("name");
@@ -22,7 +22,7 @@
 			document.getElementById("prodName").innerText = prodName;
 			document.getElementById("prodPrice").innerText = price;
 
-			alert(prodName, price, fileName);
+			alert(prodName + ", " + price + ", " + fileName);
 		}
 	</script>
 </head>
@@ -34,9 +34,9 @@
 		<input class="right" type="button" name="cart" value="Cart">
 	</header>
 	<section name="view" class="center">
-		<img id="prodImage" width="300">
-		<br /><span id="prodPrice" />€
-		<br /><span id="prodName" />
+		<img id="prodImage" height="300">
+		<br /><span id="prodPrice"></span>
+		<br /><span id="prodName"></span>
 	</section>
 </body>
 </html> 
