@@ -10,7 +10,7 @@ app.listen(process.env.PORT || PORT, () => {
 	console.log("Server started", PORT);
 });
 
-app.use(express.static('/web'))
+app.use(express.static('web'))
 
 app.get('/:name', function (req, res, next) {
 	var options = {
@@ -27,7 +27,7 @@ app.get('/:name', function (req, res, next) {
 		if (err) {
 			next(err)
 		} else {
-			console.log('Sent:', fileName)
+			console.log('Sent: ', fileName)
 		}
 	})
 })
