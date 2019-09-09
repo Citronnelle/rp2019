@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Ciphy's First Web Store</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script>
+		var urlStr = window.location.href;
+		var searchParams = new URL(urlStr);
+
+		var prodFileName = url.searchParams.get("file");
+		var prodName = url.searchParams.get("name");
+		var prodPrice = url.searchParams.get("price");
+
+		window.onload = function () {
+			var fileName = prodFileName + ".jpg";
+
+			document.getElementById("prodImage").src = fileName;
+			document.getElementById("prodName").innerText = prodName;
+			document.getElementById("prodPrice").innerText = prodPrice;
+
+			alert(prodName, prodPrice, fileName);
+		}
+	</script>
+</head>
+
+<body>
+	<header>
+		<a href="index.html" class="left"><img src="logo.jpg"></a>
+		<input class="right" type="button" name="login" value="Log in / Sign Up">
+		<input class="right" type="button" name="cart" value="Cart">
+	</header>
+	<section name="view">
+		<img id="prodImage">
+		<br /><span id="prodPrice" />€
+		<br /><span id="prodName" />
+	</section>
+</body>
+</html> 
