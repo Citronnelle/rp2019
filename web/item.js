@@ -3,15 +3,12 @@ var queryStr = urlStr.split("?")[1];	// Will not get the first parameter without
 
 var searchParams = new URLSearchParams(queryStr);
 
-var prodFileName = searchParams.get("file");
+var prodFileName = searchParams.get("image");
 var prodName = searchParams.get("name");
 var prodPrice = searchParams.get("price");
 
-var fileName = prodFileName + ".jpg";
-var price = prodPrice + "€";
-
 const image = document.createElement("img");
-image.src = fileName;
+image.src = prodFileName;
 image.height = 300;
 image.className = "item__image";
 
@@ -20,7 +17,7 @@ productName.innerText = prodName;
 productName.className = "item__product_name";
 
 const productPrice = document.createElement("span");
-productPrice.innerText = price;
+productPrice.innerText = prodPrice;
 productPrice.className = "item__product_price";
 
 const container = document.createElement("div");
